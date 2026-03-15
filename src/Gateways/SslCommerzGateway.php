@@ -87,6 +87,7 @@ class SslCommerzGateway implements GatewayInterface
                 'is_successful' => false,
                 'transaction_id' => $transactionId ?: '',
                 'status_message' => 'Missing transaction ID or validation ID',
+                'gateway_name' => 'SSLCommerz',
                 'raw_payload' => $request->all(),
             ]);
         }
@@ -96,6 +97,7 @@ class SslCommerzGateway implements GatewayInterface
                 'is_successful' => false,
                 'transaction_id' => $transactionId,
                 'status_message' => 'Status is not VALID/VALIDATED via callback: ' . $status,
+                'gateway_name' => 'SSLCommerz',
                 'raw_payload' => $request->all(),
             ]);
         }
@@ -122,6 +124,7 @@ class SslCommerzGateway implements GatewayInterface
                 'is_successful' => false,
                 'transaction_id' => $transactionId,
                 'status_message' => 'API Verification Call Failed or invalid JSON',
+                'gateway_name' => 'SSLCommerz',
                 'raw_payload' => $request->all(),
             ]);
         }
@@ -134,6 +137,7 @@ class SslCommerzGateway implements GatewayInterface
             'gateway_transaction_id' => $verification['bank_tran_id'] ?? null,
             'amount' => (float) ($verification['amount'] ?? 0),
             'status_message' => $verification['status'] ?? 'Unknown',
+            'gateway_name' => 'SSLCommerz',
             'metadata' => [
                 'type' => $verification['value_a'] ?? null,
                 'id' => $verification['value_b'] ?: null,

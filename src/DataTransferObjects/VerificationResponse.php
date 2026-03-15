@@ -9,6 +9,7 @@ class VerificationResponse
     public ?string $gatewayTransactionId;
     public float $amount;
     public ?string $statusMessage;
+    public string $gatewayName;
     public array $metadata;
     public array $rawPayload;
 
@@ -19,6 +20,7 @@ class VerificationResponse
         $this->gatewayTransactionId = $data['gateway_transaction_id'] ?? null;
         $this->amount               = (float) ($data['amount'] ?? 0);
         $this->statusMessage        = $data['status_message'] ?? null;
+        $this->gatewayName          = $data['gateway_name'] ?? 'Online Gateway';
         $this->metadata             = $data['metadata'] ?? [];
         $this->rawPayload           = $data['raw_payload'] ?? [];
     }

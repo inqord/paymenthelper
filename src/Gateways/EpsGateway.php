@@ -170,6 +170,7 @@ class EpsGateway implements GatewayInterface
                 'is_successful' => false,
                 'transaction_id' => $merchantTransactionId,
                 'status_message' => 'API Verification Call Failed',
+                'gateway_name' => 'EPS',
                 'raw_payload' => $request->all(),
             ]);
         }
@@ -182,6 +183,7 @@ class EpsGateway implements GatewayInterface
             'gateway_transaction_id' => $verification['EPSTransactionId'] ?? null,
             'amount' => (float) ($verification['TotalAmount'] ?? 0),
             'status_message' => $verification['Status'] ?? 'Unknown',
+            'gateway_name' => 'EPS',
             'metadata' => [
                 'type' => $verification['ValueA'] ?? null,
                 'id' => $verification['ValueB'] ?: null,

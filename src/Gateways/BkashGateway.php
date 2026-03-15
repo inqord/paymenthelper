@@ -103,6 +103,7 @@ class BkashGateway implements GatewayInterface
                 'is_successful' => false,
                 'transaction_id' => $transactionId,
                 'status_message' => 'Missing payment ID',
+                'gateway_name' => 'bKash',
                 'raw_payload' => $request->all(),
             ]);
         }
@@ -112,6 +113,7 @@ class BkashGateway implements GatewayInterface
                 'is_successful' => false,
                 'transaction_id' => $transactionId,
                 'status_message' => 'bKash status is not success via callback: ' . $status,
+                'gateway_name' => 'bKash',
                 'raw_payload' => $request->all(),
             ]);
         }
@@ -122,6 +124,7 @@ class BkashGateway implements GatewayInterface
                 'is_successful' => false,
                 'transaction_id' => $transactionId,
                 'status_message' => 'Could not get bKash token for verification',
+                'gateway_name' => 'bKash',
                 'raw_payload' => $request->all(),
             ]);
         }
@@ -148,6 +151,7 @@ class BkashGateway implements GatewayInterface
                 'is_successful' => false,
                 'transaction_id' => $transactionId,
                 'status_message' => $verification['errorMessage'] ?? 'API Verification Call Failed',
+                'gateway_name' => 'bKash',
                 'raw_payload' => array_merge($request->all(), ['ExecuteResponse' => $verification]),
             ]);
         }
@@ -164,6 +168,7 @@ class BkashGateway implements GatewayInterface
             'gateway_transaction_id' => $verification['trxID'] ?? null,
             'amount' => (float) ($verification['amount'] ?? 0),
             'status_message' => $verification['transactionStatus'] ?? 'Unknown',
+            'gateway_name' => 'bKash',
             'metadata' => [], // bKash doesn't support valueA, valueB out of box easily unless appended to callback URL
             'raw_payload' => array_merge($request->all(), ['bKash_Verify_Object' => $verification]),
         ]);
