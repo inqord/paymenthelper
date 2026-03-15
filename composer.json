@@ -1,0 +1,32 @@
+{
+    "name": "inqord/paymenthelper",
+    "description": "A multi-driver payment gateway integration helper for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Inqord",
+            "email": "inqord@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/http": "^10.0|^11.0|^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Inqord\\PaymentHelper\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Inqord\\PaymentHelper\\PaymentHelperServiceProvider"
+            ],
+            "aliases": {
+                "PaymentHelper": "Inqord\\PaymentHelper\\Facades\\PaymentHelper"
+            }
+        }
+    }
+}
