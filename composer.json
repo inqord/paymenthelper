@@ -3,12 +3,18 @@
     "description": "A multi-driver payment gateway integration helper for Laravel",
     "type": "library",
     "license": "MIT",
+    "homepage": "https://github.com/inqord/paymenthelper",
+    "keywords": ["laravel","payment","payment-gateway","laravel-package","payment-helper"],
     "authors": [
         {
             "name": "Inqord",
             "email": "inqord@gmail.com"
         }
     ],
+    "support": {
+        "issues": "https://github.com/inqord/paymenthelper/issues",
+        "source": "https://github.com/inqord/paymenthelper"
+    },
     "require": {
         "php": "^8.1",
         "illuminate/support": "^10.0|^11.0|^12.0",
