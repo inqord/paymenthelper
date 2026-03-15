@@ -31,7 +31,7 @@ return [
             'user_name'   => env('EPS_USER_NAME', ''),
             'password'    => env('EPS_PASSWORD', ''),
             'hash_key'    => env('EPS_HASH_KEY', ''),
-            'api_url'     => env('EPS_API_URL', 'https://v1.sandboxpg.eps.com.bd'),
+            'api_url'     => env('EPS_API_URL', 'https://sandboxpgapi.eps.com.bd'),
             'env'         => env('APP_ENV', 'production'),
             'verify_ssl'  => env('EPS_VERIFY_SSL', true),
         ],

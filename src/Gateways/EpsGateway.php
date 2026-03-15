@@ -106,12 +106,9 @@ class EpsGateway implements GatewayInterface
             $response = $http->post(rtrim($this->config['api_url'], '/') . '/v1/EPSEngine/InitializeEPS', $payload);
             $result = $response->json();
 
-            if (isset($result['Url'])) {
-                return $result['Url'];
-            }
-
-            if (isset($result['RedirectUrl'])) {
-                return $result['RedirectUrl'];
+            $redirectUrl = $result['Url'] ?? $result['RedirectURL'] ?? $result['RedirectUrl'] ?? null;
+            if ($redirectUrl) {
+                return $redirectUrl;
             }
             
             Log::error('EPS Initiation Parse Failed: ', ['response' => $result]);

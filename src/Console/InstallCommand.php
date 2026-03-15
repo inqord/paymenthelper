@@ -48,7 +48,7 @@ EPS_STORE_ID=
 EPS_USER_NAME=
 EPS_PASSWORD=
 EPS_HASH_KEY=
-EPS_API_URL=https://v1.sandboxpg.eps.com.bd
+EPS_API_URL=https://sandboxpgapi.eps.com.bd
 
 SSLC_ENABLED=false
 SSLC_VERIFY_SSL=true

@@ -35,7 +35,7 @@ EPS_STORE_ID=your_store_id
 EPS_USER_NAME=your_username
 EPS_PASSWORD=your_password
 EPS_HASH_KEY=your_hash_key
-EPS_API_URL=https://v1.sandboxpg.eps.com.bd 
+EPS_API_URL=https://sandboxpgapi.eps.com.bd 
 ```
 
 ## Usage
