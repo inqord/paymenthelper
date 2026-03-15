@@ -4,8 +4,8 @@ A simple, multi-gateway abstract payment integration package for Laravel.
 
 Currently supports:
 - **EPS** (Easy Payment System)
-- **SSLCommerz** (Coming Soon)
-- **bKash** (Coming Soon)
+- **SSLCommerz** (v4 API / IPN Verification)
+- **bKash** (Tokenized Checkout API v1.2.0-beta)
 
 ## Installation
 
@@ -57,6 +57,20 @@ $checkoutUrl = PaymentHelper::initiate(new PaymentRequest([
     'success_url'    => route('payment.success'),
     'fail_url'       => route('payment.fail'),
     'cancel_url'     => route('payment.cancel'),
+    
+    // Optional Dynamic Shipping/Product Fields
+    'currency'          => 'BDT',
+    'customer_address'  => 'Dhanmondi, Dhaka',
+    'customer_city'     => 'Dhaka',
+    'customer_postcode' => '1205',
+    'customer_country'  => 'Bangladesh',
+    'shipping_method'   => 'NO',
+    'num_of_item'       => 1,
+    'product_category'  => 'Tuition Fee',
+    'product_profile'   => 'general',
+    'intent'            => 'sale', // Primarily used for bKash
+
+    // Secure Gateway Metadata Passthrough
     'metadata'       => [
         'user_id' => 5,
         'item'    => 'premium_subscription'

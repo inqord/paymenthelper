@@ -45,6 +45,16 @@ return [
         ],
 
         // More drivers can be added here
+        'bkash' => [
+            'enabled'        => env('BKASH_ENABLED', false),
+            'app_key'        => env('BKASH_APP_KEY', ''),
+            'app_secret'     => env('BKASH_APP_SECRET', ''),
+            'username'       => env('BKASH_USERNAME', ''),
+            'password'       => env('BKASH_PASSWORD', ''),
+            'api_url'        => env('BKASH_API_URL', 'https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized'),
+            'env'            => env('APP_ENV', 'production'),
+            'verify_ssl'     => env('BKASH_VERIFY_SSL', true),
+        ],
         
     ],
 

@@ -55,6 +55,14 @@ SSLC_VERIFY_SSL=true
 SSLC_STORE_ID=
 SSLC_STORE_PASSWORD=
 SSLC_API_URL=https://sandbox.sslcommerz.com
+
+BKASH_ENABLED=false
+BKASH_VERIFY_SSL=true
+BKASH_APP_KEY=
+BKASH_APP_SECRET=
+BKASH_USERNAME=
+BKASH_PASSWORD=
+BKASH_API_URL=https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized
 EOF;
 
         if (!str_contains($envContent, 'PAYMENT_GATEWAY=')) {

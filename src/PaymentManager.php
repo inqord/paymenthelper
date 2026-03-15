@@ -5,6 +5,7 @@ namespace Inqord\PaymentHelper;
 use Illuminate\Support\Manager;
 use Inqord\PaymentHelper\Gateways\SslCommerzGateway;
 use Inqord\PaymentHelper\Gateways\EpsGateway;
+use Inqord\PaymentHelper\Gateways\BkashGateway;
 use Illuminate\Support\Facades\Log;
 
 class PaymentManager extends Manager
@@ -40,6 +41,18 @@ class PaymentManager extends Manager
     {
         return new SslCommerzGateway(
             $this->config->get('paymenthelper.gateways.sslcommerz')
+        );
+    }
+
+    /**
+     * Create an instance of the bKash gateway driver.
+     *
+     * @return BkashGateway
+     */
+    protected function createBkashDriver()
+    {
+        return new BkashGateway(
+            $this->config->get('paymenthelper.gateways.bkash')
         );
     }
     

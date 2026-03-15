@@ -77,11 +77,11 @@ class EpsGateway implements GatewayInterface
             'customerName' => $paymentRequest->customerName,
             'customerEmail' => $paymentRequest->customerEmail,
             'customerPhone' => $paymentRequest->customerPhone,
-            'customerAddress' => 'N/A', // defaults required by EPS
-            'customerCity' => 'N/A',
-            'customerState' => 'N/A',
-            'customerPostcode' => '1000',
-            'customerCountry' => 'BD',
+            'customerAddress' => $paymentRequest->customerAddress,
+            'customerCity' => $paymentRequest->customerCity,
+            'customerState' => $paymentRequest->customerCity,
+            'customerPostcode' => $paymentRequest->customerPostcode,
+            'customerCountry' => $paymentRequest->customerCountry,
             'productName' => 'Payment for ' . $paymentRequest->transactionId,
 
             // Meta payload parsing
